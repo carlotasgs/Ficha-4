@@ -23,14 +23,30 @@ public class Main {
 		cestoDaCarlota.tipoFruta();
 		cestoDaCarlota.totalGasto();
 	
-		((FrutaVolume)uva).setPercentagem(0.5);
+		//((FrutaVolume)uva).setPercentagem(0.5);
 		((FrutaVolume)uva).pagar();
 		System.out.println("Eu sou a uva e tive uma percentagem de " + ((FrutaVolume)uva).getPercentagem() + " passando a pagar só " +((FrutaVolume)uva).pagar());
 		System.out.println("Eu sou a uva e tive uma percentagem de " + ((FrutaVolume)uva).getPercentagem() + " passando a pagar só " + uva.pagar()); //igual porque pagar está na Classe Fruta
 		
-		pera.setPercentagem(0.7);
+		//pera.setPercentagem(0.7);
 		pera.pagar();
 		System.out.println("Eu sou a pera e tive uma percentagem de " + pera.getPercentagem() + " passando a pagar apenas " + pera.pagar());
 		
-	}
+		
+		for (Fruta fru: cestoDaCarlota.getFrutas()) {
+			
+			if (fru.getClass().getSimpleName().equals("FrutaVolume")) {
+				System.out.println("antes "+ fru.pagar());
+				((FrutaVolume)fru).setPercentagem(0.5);
+				System.out.println(fru.pagar());
+			} else if (fru.getClass().getSimpleName().equals("FrutaPeso")) {
+				System.out.println("antes " + fru.pagar());
+				((FrutaPeso)fru).setPercentagem(0.7);
+				System.out.println(fru.pagar());
+			} else {
+				System.out.println(fru.pagar());
+			}
+		}
+		
+		}
 }

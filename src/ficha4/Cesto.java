@@ -73,8 +73,17 @@ public class Cesto {
 		
 	}
 	
+	public List<Fruta> getFrutas() {
+		return frutas;
+	}
+
+	public void setFrutas(List<Fruta> frutas) {
+		this.frutas = frutas;
+	}
+	
 	//outra forma de fazer
 	
+
 	public int contaTipoFruta(String tipo) {
 		int contagem =0;
 		for (Fruta fru: frutas) {

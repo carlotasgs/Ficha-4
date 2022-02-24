@@ -17,7 +17,7 @@ public class FrutaPeso extends Fruta implements Descontavel{
 
 	@Override
 	public double descontar() {
-		return getPrecoBase()*percentagem;
+		return getPrecoBase()*peso*percentagem;
 	}
 
 	public void setPercentagem(double percentagem) {
