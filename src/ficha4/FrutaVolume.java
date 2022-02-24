@@ -2,22 +2,31 @@ package ficha4;
 
 public class FrutaVolume extends Fruta implements Descontavel {
 	private double volume;
-	private final double percentagem;
+	private double percentagem;
 
 	public FrutaVolume (String nome, double precoBase, double volume) {
 		super(nome, precoBase);
 		this.volume=volume;
-		percentagem=0.25;
+		percentagem=0;
 	}
 	
 	public double pagar() {
-		double precoAPagar = getPrecoBase() *volume - descontar(percentagem);
+		double precoAPagar = getPrecoBase() *volume - descontar();
 		return precoAPagar;
 	}
 
 	@Override
-	public double descontar(double percentagem) {
+	public double descontar() {
 		return getPrecoBase()*percentagem;
 	}
 
+	public void setPercentagem(double percentagem) {
+		this.percentagem = percentagem;
+	}
+
+	public double getPercentagem() {
+		return percentagem;
+	}
+	
+	
 }
